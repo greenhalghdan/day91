@@ -8,9 +8,7 @@ pdf.load()
 text_elements = pdf.pq('LTTextLineHorizontal')
 text = [t.text for t in text_elements]
 
-print(text)
 text = ' '.join(text)
-print(text)
 
 session = Session(profile_name="default")
 polly = session.client("polly")
@@ -24,6 +22,5 @@ response = polly.start_speech_synthesis_task(
         VoiceId='Amy'
     )
 
-print(response)
 print(f"You can download your file here {response['SynthesisTask']['OutputUri']}")
 
